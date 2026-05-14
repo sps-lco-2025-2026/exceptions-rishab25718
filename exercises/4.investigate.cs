@@ -1,11 +1,36 @@
 // Snippet A
-int[] arr = new int[3];
-arr[10] = 5;
+try
+{
+    int[] arr = new int[3];
+    arr[10] = 5;
+}
+
+
+catch (IndexOutOfRangeException e)
+{
+    Console.WriteLine($"{e.Message}");
+}
 
 // Snippet B
-string s = null!;
-Console.WriteLine(s.Length);
+try
+{
+    string s = null!;
+    Console.WriteLine(s.Length);
+}
+
+catch (ArgumentNullException e)
+{
+    Console.WriteLine($"The string is null: {e.Message}");
+}
 
 // Snippet C
-int x = int.MaxValue;
-checked { x = x + 1; }   // checked enforces overflow detection
+try
+{
+    int x = int.MaxValue;
+    checked { x = x + 1; }   // checked enforces overflow detection
+}
+
+catch (OverflowException e)
+{
+    Console.WriteLine($"Too large: {e.Message}");
+}
