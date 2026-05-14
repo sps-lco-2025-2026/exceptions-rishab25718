@@ -1,7 +1,15 @@
 
 int Divide(int a, int b)
 {
-    return a / b;
+    try
+    {
+        return a / b;
+    }
+
+    catch (DivideByZeroException)
+    {
+        throw new ArgumentException("Denominator cannot be zero.", ex);
+    }
 }
 
 int ReadAndDivide()
