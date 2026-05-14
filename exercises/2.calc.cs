@@ -11,4 +11,7 @@ catch (FormatException e)
     Console.WriteLine($"That is not an integer: {e.Message}");
 }
 
-
+catch (DivideByZeroException)
+{
+    Console.WriteLine("You can't divide by zero");
+}
