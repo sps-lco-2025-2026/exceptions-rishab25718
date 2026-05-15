@@ -17,7 +17,17 @@ int ReadAndDivide()
     int a = int.Parse(Console.ReadLine()!);
     Console.Write("Denominator: ");
     int b = int.Parse(Console.ReadLine()!);
-    return Divide(a, b);
+    
+    try
+    {
+        return Divide(a, b);
+    }
+
+    catch(FormatException e)
+    {
+        Console.WriteLine($"{e.Message}");
+    }
+
 }
 
 Console.WriteLine(ReadAndDivide());
