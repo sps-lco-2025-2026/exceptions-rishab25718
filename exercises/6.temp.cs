@@ -1,28 +1,5 @@
 using System;
 
-class TemperatureException : Exception
-{
-
-    public double AttemptedValue { get;}
-    public TemperatureException()
-    {
-    }
-
-    public TemperatureException(string message)
-        : base(message)
-    {
-    }
-
-    public TemperatureException(string message, Exception inner)
-        : base(message, inner)
-    {
-    }
-}
-
-class AbsoluteZeroError : TemperatureException
-{
-    public decimal temperature { get; }
-}
 
 // program below...
 
@@ -50,3 +27,25 @@ catch (FormatException)
 {
     Console.WriteLine("Enter a valid temperature");
 }
+
+//exception classes
+class TemperatureException : Exception
+{
+
+    public double AttemptedValue { get;}
+    public TemperatureException()
+    {
+    }
+
+    public TemperatureException(string message)
+        : base(message)
+    {
+    }
+
+    public TemperatureException(string message, Exception inner)
+        : base(message, inner)
+    {
+    }
+}
+
+
