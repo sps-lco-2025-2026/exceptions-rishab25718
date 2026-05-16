@@ -33,8 +33,31 @@ while (valid == true)
         {
             throw ItemNotFoundException(item);
         }
+
+        if (inventory[item] < 0)
+        {
+            throw InsufficientQuantityException(item, 0, 1);
+        }
+
+        inventory[item] = inventory[item] - 1;
+
+        Console.WriteLine($"You took 1 {item} Remaning: {inventory[item]}");
     }
 
+    catch (ItemNotFoundException e)
+    {
+        Console.WriteLine($"Error - {e.Message}");
+    }
+
+    catch (InsufficientQuantityException e)
+    {
+        Console.WriteLine($"Error - {e.Message}");
+    }
+
+    catch (InventoryException e)
+    {
+        Console.WriteLine($"Unknown general error type {e.Message}");
+    }
 }
 
 //Exception Classes
