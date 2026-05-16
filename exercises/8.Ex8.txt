@@ -1,0 +1,19 @@
+1. Why should InsufficientQuantityException inherit from InventoryException rather than directly from Exception?
+
+Because it's an exception which is relevant to the inventory, it's a subset of InventoryException.
+
+2. Could a caller catch both ItemNotFoundException and InsufficientQuantityException with a single catch block? How?
+
+Yes, they both inherit from 'Exceptions' so you just catch them with the base class.
+
+3. When would you choose to catch Exception rather than a specific type?
+
+When the exception does not fit any specific type.
+
+4. What's the purpose of the (string message, Exception inner) constructor? When would you use inner?
+
+So the original error isn't lost in the error message. You'd use it if there's a mistake somewhere else in the code that could be linked to inner.
+
+5. Discuss when you might explicitly deploy the throw ex pattern.
+
+To reset the stack trace of the exception.
