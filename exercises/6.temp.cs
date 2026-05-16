@@ -2,6 +2,8 @@ using System;
 
 class TemperatureException : Exception
 {
+
+    public double AttemptedValue { get;}
     public TemperatureException()
     {
     }
@@ -42,6 +44,7 @@ try
 catch (TemperatureException e)
 {
     Console.WriteLine($"Temperature error: {e.Message}");
+    Console.WriteLine($"Attempted value: {e.AttemptedValue}");
 }
 catch (FormatException)
 {
